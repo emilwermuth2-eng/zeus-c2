@@ -1,0 +1,161 @@
+/* ── Zeus C2 — Global styles ─────────────────────────────── */
+
+:root {
+  --bg-primary:    #0a0d12;
+  --bg-secondary:  #0f1318;
+  --bg-surface:    #141920;
+  --bg-elevated:   #1a2030;
+  --border:        #1f2d3d;
+  --border-bright: #2a3f52;
+
+  --text-primary:  #c8d8e8;
+  --text-secondary:#7a94a8;
+  --text-dim:      #3d5060;
+
+  --accent-cyan:   #00e5ff;
+  --accent-green:  #00ff88;
+  --accent-red:    #ff3b5c;
+  --accent-amber:  #ffaa00;
+  --accent-zeus:   #7b5cf5;
+
+  --topbar-h: 44px;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-ui:   'Inter', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  overflow: hidden;
+}
+
+/* ── Top bar ─────────────────────────────────────────────── */
+#topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--topbar-h);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px;
+  z-index: 1000;
+}
+
+.zeus-logo {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-zeus);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+#rail-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.rail-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 5px 14px;
+  text-transform: uppercase;
+  transition: all 0.15s;
+}
+
+.rail-tab:hover {
+  border-color: var(--border-bright);
+  color: var(--text-primary);
+}
+
+.rail-tab.active {
+  background: var(--bg-elevated);
+  border-color: var(--accent-zeus);
+  color: var(--accent-zeus);
+}
+
+#c2-status {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.status-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+
+.status-dot.disconnected { background: var(--accent-red); }
+.status-dot.connecting   { background: var(--accent-amber); animation: pulse 1s infinite; }
+.status-dot.connected    { background: var(--accent-green); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ── Content / panels ────────────────────────────────────── */
+#content {
+  position: absolute;
+  top: var(--topbar-h); left: 0; right: 0; bottom: 0;
+}
+
+.panel {
+  display: none;
+  position: absolute;
+  inset: 0;
+}
+
+.panel.active {
+  display: flex;
+}
+
+/* ── Cesium map panel ────────────────────────────────────── */
+#panel-osint {
+  position: relative;
+}
+
+#cesiumContainer {
+  position: absolute;
+  inset: 0;
+}
+
+/* ── C2 console panel ────────────────────────────────────── */
+#panel-c2 {
+  flex-direction: column;
+  background: var(--bg-primary);
+}
+
+#c2-console-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* ── Beacon list panel ───────────────────────────────────── */
+#panel-beacons {
+  flex-direction: column;
+  background: var(--bg-primary);
+}
+
+/* ── C2 Console component styles ─────────────────────────── */
+@import '/src/ui/panels/c2console/c2console.css';

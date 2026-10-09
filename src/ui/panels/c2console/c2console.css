@@ -1,0 +1,195 @@
+/* ── C2 Console panel ────────────────────────────────────── */
+
+.c2-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.c2-toolbar-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent-zeus);
+}
+
+.c2-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.c2-btn {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-bright);
+  border-radius: 4px;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 12px;
+  transition: all 0.15s;
+}
+
+.c2-btn:hover { border-color: var(--accent-zeus); color: var(--accent-zeus); }
+.c2-btn.primary { background: var(--accent-zeus); border-color: var(--accent-zeus); color: #fff; }
+.c2-btn.primary:hover { filter: brightness(1.2); }
+
+.c2-select {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-bright);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 4px 8px;
+  min-width: 260px;
+}
+
+.c2-body {
+  flex: 1;
+  overflow: hidden;
+  padding: 8px;
+}
+
+#c2-terminal {
+  height: 100%;
+}
+
+/* ── Taskbar ─────────────────────────────────────────────── */
+.c2-taskbar {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 8px 12px;
+  flex-shrink: 0;
+}
+
+.c2-quickcmds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.c2-quick-btn {
+  background: transparent;
+  border: 1px solid var(--border-bright);
+  border-radius: 3px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 2px 8px;
+  transition: all 0.12s;
+}
+
+.c2-quick-btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+.c2-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.c2-prompt {
+  color: var(--accent-zeus);
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.c2-cmd-input {
+  flex: 1;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-bright);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 6px 10px;
+  outline: none;
+}
+
+.c2-cmd-input:focus { border-color: var(--accent-zeus); }
+
+/* ── Beacon list panel ───────────────────────────────────── */
+.beacon-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16px;
+  gap: 12px;
+}
+
+.beacon-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.beacon-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-green);
+}
+
+.beacon-count {
+  background: var(--accent-green);
+  border-radius: 10px;
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 22px;
+  padding: 1px 7px;
+  text-align: center;
+}
+
+.beacon-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.beacon-table th {
+  color: var(--text-dim);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 6px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.beacon-table td {
+  color: var(--text-primary);
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.beacon-row:hover td { background: var(--bg-elevated); cursor: pointer; }
+
+.beacon-id { color: var(--accent-cyan); font-weight: 600; }
+.beacon-seen { color: var(--text-secondary); }
+
+.beacon-empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}

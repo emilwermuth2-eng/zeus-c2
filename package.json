@@ -1,0 +1,29 @@
+{
+  "name": "zeus-c2",
+  "version": "1.0.0",
+  "description": "Unified OSINT + C2 operator console — Gods Eye View intelligence layer with Havoc C2 integration",
+  "type": "module",
+  "engines": {
+    "node": ">=24.14.0 <25 || >=26"
+  },
+  "scripts": {
+    "dev": "node server/index.js & vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server/index.js",
+    "setup": "node scripts/setup.js"
+  },
+  "dependencies": {
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/addon-web-links": "^0.11.0",
+    "cesium": "^1.124.0",
+    "express": "^4.19.2",
+    "http-proxy-middleware": "^3.0.3",
+    "ws": "^8.18.0",
+    "xterm": "^5.3.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0",
+    "vite-plugin-cesium": "^1.3.2"
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZEUS C2 — Operator Console</title>
+  <link rel="icon" type="image/svg+xml" href="/icons/zeus.svg" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="shell">
+      <div id="topbar">
+        <span class="zeus-logo">⚡ ZEUS C2</span>
+        <nav id="rail-tabs">
+          <button class="rail-tab active" data-panel="osint">OSINT</button>
+          <button class="rail-tab" data-panel="c2">C2 Console</button>
+          <button class="rail-tab" data-panel="beacons">Beacons</button>
+        </nav>
+        <div id="c2-status">
+          <span id="c2-indicator" class="status-dot disconnected"></span>
+          <span id="c2-label">Teamserver: Disconnected</span>
+        </div>
+      </div>
+
+      <div id="content">
+        <div id="panel-osint" class="panel active">
+          <div id="cesiumContainer"></div>
+          <div id="left-rail"></div>
+          <div id="right-rail"></div>
+          <div id="hud"></div>
+        </div>
+
+        <div id="panel-c2" class="panel">
+          <div id="c2-console-root"></div>
+        </div>
+
+        <div id="panel-beacons" class="panel">
+          <div id="beacon-list-root"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
